@@ -3,9 +3,12 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using BusinessLookup.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace BusinessLookup.Controllers
 {
+  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class RestaurantsController : ControllerBase
