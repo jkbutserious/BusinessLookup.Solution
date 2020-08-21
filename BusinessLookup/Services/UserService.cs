@@ -23,6 +23,7 @@ namespace BusinessLookup.Services
         private List<User> _users = new List<User>
         { 
             new User { Id = 1, FirstName = "Jeff", LastName = "Kim", UserName = "jeffkim", Password = "jeffkim" }
+            new User { Id = 2, FirstName = "Test", LastName = "Test", UserName = "test", Password = "test" }
         };
 
         private readonly AppSettings _appSettings;
