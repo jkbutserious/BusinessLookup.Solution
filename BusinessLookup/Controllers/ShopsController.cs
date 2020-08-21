@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BusinessLookup.Controllers
 {
-  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class ShopsController : ControllerBase
@@ -47,6 +46,7 @@ namespace BusinessLookup.Controllers
     }
 
     // POST api/shops
+    [Authorize]
     [HttpPost]
     public void Post([FromBody] Shop shop)
     {
@@ -55,6 +55,7 @@ namespace BusinessLookup.Controllers
     }
 
     // PUT api/shops/[ShopId]
+    [Authorize]
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] Shop shop)
     {
@@ -64,6 +65,7 @@ namespace BusinessLookup.Controllers
     }
 
     // DELETE api/shops/[ShopId]
+    [Authorize]
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
