@@ -58,4 +58,12 @@ namespace BusinessLookup.Controllers
       _db.Entry(restaurant).State = EntityState.Modified;
       _db.SaveChanges();
     }
+
+    // DELETE api/shops/[MessageId]
+    public void Delete(int id)
+    {
+      var restaurantToRemove = _db.Restaurants.FirstOrDefault(entry => entry.RestaurantId == id);
+      _db.Restaurants.Remove(restaurantToRemove);
+      _db.SaveChanges();
+    }
   }
