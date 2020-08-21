@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLookup.Controllers
 {
-  [Route("api/[controller")]
+  [Route("api/[controller]")]
   [ApiController]
   public class RestaurantsController : ControllerBase
   {
@@ -59,7 +59,8 @@ namespace BusinessLookup.Controllers
       _db.SaveChanges();
     }
 
-    // DELETE api/shops/[MessageId]
+    // DELETE api/shops/[RestaurantId]
+    [HttpDelete("{id}")]
     public void Delete(int id)
     {
       var restaurantToRemove = _db.Restaurants.FirstOrDefault(entry => entry.RestaurantId == id);
