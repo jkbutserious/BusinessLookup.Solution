@@ -49,4 +49,13 @@ namespace BusinessLookup.Controllers
       _db.Restaurants.Add(restaurant);
       _db.SaveChanges();
     }
+
+    // PUT api/shops/[ShopId]
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Restaurant restaurant)
+    {
+      restaurant.RestaurantId = id;
+      _db.Entry(restaurant).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
   }
