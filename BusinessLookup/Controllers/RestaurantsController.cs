@@ -18,9 +18,9 @@ namespace BusinessLookup.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Shop>> Get(int? id, string name, string cuisine, int? phone)
+    public ActionResult<IEnumerable<Restaurant>> Get(int? id, string name, string cuisine, int? phone)
     {
-      var query = _db.Shops.AsQueryable();
+      var query = _db.Restaurants.AsQueryable();
 
       if (id != null)
       {
@@ -30,7 +30,7 @@ namespace BusinessLookup.Controllers
       {
         query = query.Where(entry => entry.Name == name);
       }
-      if (type != null)
+      if (cuisine != null)
       {
         query = query.Where(entry => entry.Cuisine == cuisine);
       }
@@ -40,5 +40,13 @@ namespace BusinessLookup.Controllers
       }
 
       return query.ToList();
+    }
+
+    // POST api/shops
+    [HttpPost]
+    public void Post([FromBody] Restaurant restaurant)
+    {
+      _db.Restaurants.Add(restaurant);
+      _db.SaveChanges();
     }
   }
