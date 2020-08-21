@@ -20,6 +20,14 @@ namespace BusinessLookup.Models
           new Shop { ShopId = 3, Name = "Farmhouse and Highborn", Type = "Book", PhoneNumber = 4255550003 },
           new Shop { ShopId = 4, Name = "QXNickel", Type = "Department Store", PhoneNumber = 4255550004 }
         );
+    
+      builder.Entity<Restaurant>()
+        .HasData(
+          new Restaurant { RestaurantId = 1, Name = "Tom and Mickey's", Cuisine = "Ice Cream", PhoneNumber = 4255550005 },
+          new Restaurant { RestaurantId = 2, Name = "Caper Greenhouse", Cuisine = "Italian", PhoneNumber = 4255550006 },
+          new Restaurant { RestaurantId = 3, Name = "Blue Bluejay", Cuisine = "Burgers", PhoneNumber = 4255550007 },
+          new Restaurant { RestaurantId = 4, Name = "185F", Cuisine = "Bakery", PhoneNumber = 4255550008 }
+        );
     }
   }
 }
