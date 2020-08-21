@@ -29,6 +29,7 @@ namespace BusinessLookup
       services.AddDbContext<BusinessLookupContext>(opt => opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
       services.AddCors();
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddSwaggerGen();
 
       // configure strongly typed settings objects
       var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -62,6 +63,11 @@ namespace BusinessLookup
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
+      app.UseSwagger();
+      app.UseSwaggerUI(c =>
+      {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+      });
       // global cors policy
       app.UseCors(x => x
           .AllowAnyOrigin()
