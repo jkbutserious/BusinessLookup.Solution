@@ -18,7 +18,7 @@ namespace BusinessLookup.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Restaurant>> Get(int? id, string name, string cuisine, int? phone)
+    public ActionResult<IEnumerable<Restaurant>> Get(int? id, string name, string cuisine, uint? phone)
     {
       var query = _db.Restaurants.AsQueryable();
 
@@ -67,3 +67,4 @@ namespace BusinessLookup.Controllers
       _db.SaveChanges();
     }
   }
+}

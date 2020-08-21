@@ -19,7 +19,7 @@ namespace BusinessLookup.Controllers
 
     // GET api/shops
     [HttpGet]
-    public ActionResult<IEnumerable<Shop>> Get(int? id, string name, string type, int? phone)
+    public ActionResult<IEnumerable<Shop>> Get(int? id, string name, string type, uint? phone)
     {
       var query = _db.Shops.AsQueryable();
 

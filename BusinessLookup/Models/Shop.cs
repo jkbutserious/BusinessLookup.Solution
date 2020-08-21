@@ -7,6 +7,6 @@ namespace BusinessLookup.Models
     public int ShopId { get; set; }
     public string Name { get; set; }
     public string Type { get; set; }
-    public int PhoneNumber { get; set; }
+    public uint PhoneNumber { get; set; }
   }
 }
